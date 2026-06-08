@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "currentMode": "debug",
+  "modes": {
+    "ask": {
+      "name": "Ask 模式（架构师）",
+      "description": "需求分析、技术方案设计、任务拆分。只出方案，不写落地代码。",
+      "icon": "🔍",
+      "systemPromptFile": "ask-system-prompt.md",
+      "toolPermissions": {
+        "readFiles": true,
+        "readFilesExternally": true,
+        "editFiles": false,
+        "editFilesExternally": false,
+        "executeSafeCommands": false,
+        "executeAllCommands": false,
+        "useBrowser": false,
+        "useMcp": true
+      },
+      "outputFormat": "技术设计文档、架构图描述、任务拆分清单（Markdown）",
+      "nextMode": "code"
+    },
+    "code": {
+      "name": "Code 模式（工程师）",
+      "description": "严格按方案写代码。关注细节、边界条件、错误处理。",
+      "icon": "💻",
+      "systemPromptFile": "code-system-prompt.md",
+      "toolPermissions": {
+        "readFiles": true,
+        "readFilesExternally": true,
+        "editFiles": true,
+        "editFilesExternally": true,
+        "executeSafeCommands": true,
+        "executeAllCommands": false,
+        "useBrowser": false,
+        "useMcp": true
+      },
+      "outputFormat": "完整代码文件、单元测试（可直接运行）",
+      "nextMode": "debug"
+    },
+    "debug": {
+      "name": "Debug 模式（调优者）",
+      "description": "快速定位根因，最小化修复。不重构，不引入新功能。",
+      "icon": "🐛",
+      "systemPromptFile": "debug-system-prompt.md",
+      "toolPermissions": {
+        "readFiles": true,
+        "readFilesExternally": true,
+        "editFiles": true,
+        "editFilesExternally": true,
+        "executeSafeCommands": true,
+        "executeAllCommands": true,
+        "useBrowser": false,
+        "useMcp": true
+      },
+      "outputFormat": "错误根因分析 + 最小修复 diff/patch",
+      "nextMode": "code"
+    }
+  },
+  "contextBridge": {
+    "enabled": true,
+    "bridgeFile": "context-bridge.json",
+    "autoInject": true
+  },
+  "workflow": {
+    "defaultCycle": ["ask", "code", "debug"],
+    "modeSwitchTrigger": "用户在对话中说出切换指令（如「切到 Code 模式」）或使用 MCP 工具 switch_mode"
+  }
+}

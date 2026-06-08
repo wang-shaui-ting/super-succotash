@@ -1,0 +1,43 @@
+{
+  "currentModeChain": "code",
+  "modeHistory": [
+    {
+      "from": "ask",
+      "to": "code",
+      "reason": "方案确认，开始编码",
+      "timestamp": "2026-06-07T11:02:35.497Z"
+    },
+    {
+      "from": "code",
+      "to": "debug",
+      "reason": "用户切换至 Debug 模式",
+      "timestamp": "2026-06-07T11:17:00.000Z"
+    },
+    {
+      "from": "debug",
+      "to": "code",
+      "reason": "用户切换至 Code 模式",
+      "timestamp": "2026-06-07T11:18:00.000Z"
+    },
+    {
+      "from": "code",
+      "to": "ask",
+      "reason": "用户切换至 Ask 模式",
+      "timestamp": "2026-06-07T11:18:45.000Z"
+    },
+    {
+      "from": "ask",
+      "to": "debug",
+      "reason": "用户切换至 Debug 模式",
+      "timestamp": "2026-06-07T11:19:13.000Z"
+    },
+    {
+      "from": "debug",
+      "to": "code",
+      "reason": "用户切换至 Code 模式",
+      "timestamp": "2026-06-07T11:24:30.000Z"
+    }
+  ],
+  "lastSolution": null,
+  "activeTask": null
+}

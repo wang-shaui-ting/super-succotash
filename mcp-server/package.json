@@ -1,0 +1,14 @@
+{
+  "name": "cline-custom-modes-mcp",
+  "version": "1.0.0",
+  "description": "Cline 多模式管理器 MCP Server - Ask/Code/Debug 三种模式切换与上下文桥接",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:stdio": "node server.js --stdio"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
